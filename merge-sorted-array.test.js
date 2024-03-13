@@ -1,5 +1,6 @@
-const { describe, it } = require("test");
-const assert = require("assert");
+const { describe, it } = require("node:test");
+const assert = require("node:assert");
+const { merge } = require('./merge-sorted-array-1');
 
 describe("merge", function () {
   it("merge two sorted array to one sorted array, which stores in the first sorted array", function () {

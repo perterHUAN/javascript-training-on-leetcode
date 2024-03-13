@@ -35,3 +35,7 @@ function merge(nums1, n, nums2, m) {
     }
   }
 }
+
+module.exports = {
+	merge	
+}
