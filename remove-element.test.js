@@ -1,5 +1,6 @@
 const assert = require("node:assert");
 const { describe, it } = require("node:test");
+const removeElement = require("./remove-element-1");
 
 describe("removeElement", function () {
   it("remove all elements in place which value is equal to second parameter val, return k representing the number of remain elements and first k elements are not equal to val. ", function () {

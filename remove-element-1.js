@@ -23,3 +23,5 @@ function removeElement(nums, val) {
   }
   return notSameIdx;
 }
+
+module.exports = removeElement;
