@@ -1,4 +1,5 @@
 const { describe, it } = require("node:test");
+const assert = require("node:assert")
 
 describe("remove duplicates from sorted Array", function () {
   it("Consecutive duplicate numbers appear at the middle of the array", function () {
