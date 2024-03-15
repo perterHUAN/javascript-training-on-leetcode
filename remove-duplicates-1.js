@@ -21,3 +21,4 @@ function removeDuplicates(nums) {
   }
   return notSameIdx;
 }
+module.exports = removeDuplicates;
