@@ -1,5 +1,6 @@
 const { describe, it } = require("node:test");
 const assert = require("node:assert");
+const removeDuplicates = require("./remove-duplicates-2-1")
 
 describe("removeDuplicates", function() {
   it("at start", function() {
