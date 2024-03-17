@@ -1,6 +1,6 @@
-const chai = require("chai");
-const assert = chai.assert;
-
+const { describe, it } = require("node:test");
+const assert = require("node:assert");
+const majorityElement = require("./majority-element-2")
 describe("majorityElement", function () {
   it("middle", function () {
     const nums = [1, 2, 2, 3, 3, 3, 3, 3, 4];
