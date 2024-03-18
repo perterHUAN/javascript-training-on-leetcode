@@ -1,6 +1,6 @@
 const { describe, it } = require("node:test");
 const assert = require("node:assert");
-const rotate = require("");
+const rotate = require("./rotate-array-1");
 
 function nativeRotateSolution(nums, k) {
   const n = nums.length;

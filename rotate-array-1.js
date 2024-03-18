@@ -39,3 +39,4 @@ function reverse(nums, start, end) {
     --right;
   }
 }
+module.exports = rotate;
