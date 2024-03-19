@@ -1,6 +1,6 @@
 const { describe, it } = require("node:test");
 const assert = require("node:assert");
-
+const maxProfit = require("./max-profit-1")
 describe("maxProfit", function() {
   it("prices array is empty", function() {
     const prices = [];
