@@ -1,5 +1,6 @@
 const assert = require("node:assert");
 const { describe, it } = require("node:test");
+const maxProfit = require("./max-profit-2-1.js")
 
 describe("maxProfit", function() {
   it("array is empty", function() {
