@@ -11,3 +11,4 @@ function maxProfit(prices) {
   }
   return res;
 }
+module.exports = maxProfit;
