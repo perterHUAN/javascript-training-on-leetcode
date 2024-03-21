@@ -19,3 +19,4 @@ function maxProfit(prices) {
   }
   return dp0;
 }
+module.exports = maxProfit;
