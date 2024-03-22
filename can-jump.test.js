@@ -18,6 +18,12 @@ describe("canJump", function () {
 
     const nums4 = [3, 2, 1, 1, 0];
     assert.equal(canJump(nums4), true);
+
+    const nums5 = [3, 2, 1];
+    assert.equal(canJump(nums5), true);
+
+    const nums6 = [5, 9, 3, 2, 1, 0, 2, 3, 3, 1, 0, 0];
+    assert.equal(canJump(nums6), true);
   });
 
   it("can't reach to last location", function () {
