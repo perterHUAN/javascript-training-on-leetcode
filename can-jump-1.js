@@ -25,3 +25,4 @@ function canJump(nums) {
   }
   return true;
 }
+module.exports = canJump;

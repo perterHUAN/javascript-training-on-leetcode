@@ -1,5 +1,6 @@
 const { describe, it } = require("node:test");
 const assert = require("node:assert");
+const canJump = require("./can-jump-1");
 
 describe("canJump", function () {
   it("can reach to last location", function () {
