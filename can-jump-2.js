@@ -10,15 +10,14 @@ function canJump(nums) {
    */
 
   let farthestPosition = 0;
-  for (let i = 0; i < nums.length; ++i) {
+  for (let i = 0; i < nums.length && farthestPosition < nums.length - 1; ++i) {
     const p = nums[i] + i;
     if (farthestPosition >= i && p > farthestPosition) {
       farthestPosition = p;
-      if (farthestPosition >= nums.length - 1) return true;
     } else if (farthestPosition < i) {
       return false;
     }
   }
-  return false;
+  return true;
 }
 module.exports = canJump;
