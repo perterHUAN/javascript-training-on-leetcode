@@ -27,3 +27,4 @@ function hIndex(citations) {
 	*/
   return left;
 }
+module.exports= hIndex;
