@@ -9,22 +9,24 @@ function hIndex(citations) {
   let left = 0,
     right = 5000;
   /*
-		h-index in [left, right]
+		h-index
+		to check:
+			[left, right]
+		already check: 
+			[0,...left) valid h
+			(right, ...] not valid h
 	*/
   function isValidH(t) {
     return citations.reduce((pre, c) => (c >= t ? pre + 1 : pre), 0) >= t;
   }
-  while (left < right) {
+  while (left <= right) {
     const middle = (left + right) >> 1;
     if (isValidH(middle)) {
-      left = middle;
+      left = middle + 1;
     } else {
       right = middle - 1;
     }
   }
-  /*
-		end when left === right, do loop forever ?
-	*/
-  return left;
+  return right;
 }
-module.exports= hIndex;
+module.exports = hIndex;
