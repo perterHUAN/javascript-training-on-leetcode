@@ -36,11 +36,15 @@ describe("RandomizedSet", () => {
     res = s.getRandom();
     assert.ok([1, 2, 3, 4].includes(res));
 
-    res = s.getRandom();
-    assert.ok([1, 2, 3, 4].includes(res));
+    s.remove(1);
 
     res = s.getRandom();
-    assert.ok([1, 2, 3, 4].includes(res));
+    assert.ok([2, 3, 4].includes(res));
+
+    s.remove(2);
+
+    res = s.getRandom();
+    assert.ok([3, 4].includes(res));
   });
 
   test("remove method, return true if the item was present, false otherwise", () => {
