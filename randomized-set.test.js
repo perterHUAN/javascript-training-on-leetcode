@@ -47,7 +47,7 @@ describe("RandomizedSet", () => {
   });
 
   test("getRandom method, each element must have the same probability of being return", () => {
-    const s = RandomizedSet();
+    const s = new RandomizedSet();
 
     s.insert(0);
     s.insert(100);
