@@ -15,12 +15,13 @@ function hIndex(citations) {
     // how to make cnt[i] i >= e all increase 1 ? It's a hard question.
     cnt[e]++;
   }
-  for (let j = maxCitationCount - 2; j >= 0; --j) {
-    cnt[j] += cnt[j + 1];
+  let tot = 0,
+    j;
+  for (j = maxCitationCount - 1; j >= 0; --j) {
+    tot += cnt[j];
+    if (tot >= j) break;
   }
-  let i;
-  for (i = maxCitationCount - 1; i >= 0 && cnt[i] < i; --i);
-  return i;
+  return j;
 }
 
 module.exports = hIndex;
