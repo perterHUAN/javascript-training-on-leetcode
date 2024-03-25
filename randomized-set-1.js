@@ -1,5 +1,3 @@
-const { chdir } = require("process");
-
 function createNode(type, parent = null, val, left = null, right = null) {
   const node = {
     parent,
@@ -89,19 +87,21 @@ RandomizedSet.prototype.remove = function (val) {
   // no existing
   if (currNode === null) return false;
   // clear this leaf node and associated free nodes
-  function checkHaveOnlyThisChildNode(parent, child) {
-    return (
-      (parent.left === child && parent.right === null) ||
-      (parent.right === child && parent.left === null)
-    );
+  function checkNoChilrenNode(node) {
+    return node.left === null && node.right === null;
+  }
+  function removeNode(node) {
+    let parent = node.parent;
+    if (node == parent.left) parent.left = null;
+    if (node == parent.right) parent.right = null;
+    node.parent = null;
+    return parent;
   }
   while (currNode && currNode.parent) {
     // check whether parent node only have this one child node
-    if (checkHaveOnlyThisChildNode(currNode.parent, currNode)) {
-      currNode.parent.left = null;
-      currNode.parent.right = null;
-    }
-    currNode = currNode.parent;
+    if (checkNoChilrenNode(currNode)) {
+      currNode = removeNode(currNode);
+    } else break;
   }
 
   return true;
