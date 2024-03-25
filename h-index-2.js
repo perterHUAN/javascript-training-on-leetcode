@@ -13,9 +13,10 @@ function hIndex(citations) {
   let cnt = Array(maxCitationCount).fill(0);
   for (const e of citations) {
     // how to make cnt[i] i >= e all increase 1 ? It's a hard question.
-    for (let i = 0; i <= e; ++i) {
-      cnt[i]++;
-    }
+    cnt[e]++;
+  }
+  for (let j = maxCitationCount - 2; j >= 0; --j) {
+    cnt[j] += cnt[j + 1];
   }
   let i;
   for (i = maxCitationCount - 1; i >= 0 && cnt[i] < i; --i);
