@@ -23,7 +23,7 @@ describe("RandomizedSet", () => {
     assert.equal(res, false);
   });
 
-  test("get method, return an random element from the current set of elements", () => {
+  test("getRandom method, return an random element from the current set of elements", () => {
     const s = new RandomizedSet();
     let res;
 
@@ -44,6 +44,22 @@ describe("RandomizedSet", () => {
 
     res = s.getRandom();
     assert.ok([3, 4].includes(res));
+  });
+
+  test("getRandom method, each element must have the same probability of being return", () => {
+    const s = RandomizedSet();
+
+    s.insert(0);
+    s.insert(100);
+
+    let cnt1 = 0;
+    cnt2 = 0;
+    for (const i = 0; i < 100; ++i) {
+      const res = s.getRandom();
+      res === 0 ? ++cnt1 : ++cnt2;
+    }
+
+    assert.ok(Math.abs(cnt1 - cnt2) < 10);
   });
 
   test("remove method, return true if the item was present, false otherwise", () => {
