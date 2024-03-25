@@ -7,6 +7,7 @@
 
 const { describe, test } = require("node:test");
 const assert = require("node:assert");
+const RandomizedSet = require("./randomized-set-1");
 
 describe("RandomizedSet", () => {
   test("insert method, return true if the item was not present, false otherwise", () => {
