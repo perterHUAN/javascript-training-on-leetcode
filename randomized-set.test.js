@@ -50,17 +50,27 @@ describe("RandomizedSet", () => {
   test("getRandom method, each element must have the same probability of being return", () => {
     const s = new RandomizedSet();
 
-    s.insert(0);
-    s.insert(100);
-
-    let cnt1 = 0;
-    let cnt2 = 0;
-    for (let i = 0; i < 100; ++i) {
-      const res = s.getRandom();
-      res === 0 ? ++cnt1 : ++cnt2;
+    function randomNumber() {
+      return Math.floor(Math.random() * 10000);
     }
-
-    assert.ok(Math.abs(cnt1 - cnt2) < 10);
+    const failTimesThreshold = 10;
+    const difference = 50;
+    let failTimes = 0;
+    // do 100 times lab
+    for (let i = 0; i < 100; ++i) {
+      const n1 = randomNumber(),
+        n2 = randomNumber();
+      let cnt1 = 0;
+      let cnt2 = 0;
+      s.insert(n1);
+      s.insert(n2);
+      for (let j = 0; j < 1000; ++j) {
+        const res = s.getRandom();
+        res === n1 ? ++cnt1 : ++cnt2;
+      }
+      if(Math.abs(cnt1 - cnt2) > difference) ++failTimes;
+      assert.ok(failTimes < failTimesThreshold);  
+    }
   });
 
   test("remove method, return true if the item was present, false otherwise", () => {
