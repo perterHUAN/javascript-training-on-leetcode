@@ -54,8 +54,8 @@ describe("RandomizedSet", () => {
     s.insert(100);
 
     let cnt1 = 0;
-    cnt2 = 0;
-    for (const i = 0; i < 100; ++i) {
+    let cnt2 = 0;
+    for (let i = 0; i < 100; ++i) {
       const res = s.getRandom();
       res === 0 ? ++cnt1 : ++cnt2;
     }
