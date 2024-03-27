@@ -1,5 +1,6 @@
 const { describe, test } = require("node:test");
 const assert = require("node:assert");
+const productExceptSelf = require("./product-expect-self-1")
 describe("productExceptSelf", () => {
   test("not empty ", () => {
     const nums = [1, 2, 3];
