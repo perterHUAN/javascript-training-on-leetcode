@@ -7,6 +7,7 @@
 
 const { describe, test } = require("node:test");
 const assert = require("node:assert");
+const RandomizedSet = require("./randomized-set-1");
 
 describe("RandomizedSet", () => {
   test("insert method, return true if the item was not present, false otherwise", () => {
@@ -67,8 +68,8 @@ describe("RandomizedSet", () => {
         const res = s.getRandom();
         res === n1 ? ++cnt1 : ++cnt2;
       }
-      if(Math.abs(cnt1 - cnt2) > difference) ++failTimes;
-      assert.ok(failTimes < failTimesThreshold);  
+      if (Math.abs(cnt1 - cnt2) > difference) ++failTimes;
+      assert.ok(failTimes < failTimesThreshold);
     }
   });
 
